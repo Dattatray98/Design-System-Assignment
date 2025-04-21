@@ -25,6 +25,6 @@
   "include": ["src", "tailwind.config.ts"],
   "references": [
     { "path": "./tsconfig.node.json" },
-    { "path": "./tsconfig.types.json" }
+
   ]
 }
