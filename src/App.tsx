@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import { ThemeToggle } from './components/ThemeToggle/ThemeToggle';
 import { Tabs } from './components/Tabs/Tabs';
-import './styles/colors.css'
+import './styles/colors.css';
 
 const App: React.FC = () => {
   const tabs = [
