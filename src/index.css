@@ -1,9 +1,9 @@
+@import './app/globals.css';
+@import './styles/colors.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import './app/globals.css';
-@import './styles/colors.css';
 
 @layer utilities {
   .text-balance {
