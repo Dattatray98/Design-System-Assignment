@@ -1,132 +1,65 @@
 # Design System Assignment
 
-A comprehensive design system built with React, TypeScript, TailwindCSS, and Storybook. This project focuses on creating a token-based color system, data display components, and navigation components with a strong emphasis on accessibility and documentation.
+A comprehensive design system built with React, TypeScript, TailwindCSS, and Storybook. This project focuses on creating a robust and accessible component library with a strong emphasis on color system, data display, and navigation components.
 
-## Project Overview
+## Features
 
-This design system includes:
+- **Color System**: Comprehensive color palette with primary, secondary, and tertiary colors
+- **Theme Support**: Light and dark mode with smooth transitions
+- **Accessibility**: WCAG 2.1 AA compliant components
+- **TypeScript**: Full type safety and better developer experience
+- **Storybook**: Interactive documentation and component playground
 
-- **Color System**: A comprehensive token-based color system with primary, secondary, tertiary, and semantic colors, along with light/dark theme support.
-- **Data Display Components**: Table, Accordion, and Tab components for displaying structured data.
-- **Navigation Components**: Navbar and Pagination components for navigation.
+## Components
 
-## Color System
-
-The color system is built on a token-based approach with the following features:
-
-- **Main Color Palettes**:
-  - Primary colors (11 shades)
-  - Secondary colors (11 shades)
-  - Tertiary colors (11 shades)
-  - Neutral colors (11 shades)
-
-- **Semantic Colors**:
-  - Success colors (11 shades)
-  - Error colors (11 shades)
-  - Warning colors (11 shades)
-  - Info colors (11 shades)
-
-- **Surface Colors**:
-  - Background colors (primary, secondary, tertiary)
-  - Border colors
-  - Text colors
-
-- **Theme Support**:
-  - Light theme
-  - Dark theme
-  - Theme context for managing theme state
-
-- **Accessibility**:
-  - WCAG 2.1 AA compliant
-  - Sufficient color contrast
-  - Semantic color usage
-
-### Usage Example
+### Color System
+The color system provides a comprehensive set of colors with semantic meaning and accessibility considerations.
 
 ```tsx
-import { useTheme } from '../context/ThemeContext';
+// Using color tokens in your components
+<div className="bg-primary-500 text-white">
+  Primary colored element
+</div>
+```
 
-function MyComponent() {
-  const { theme, toggleTheme } = useTheme();
-  
+### Theme Toggle
+A button component that switches between light and dark themes.
+
+```tsx
+import { ThemeToggle } from './components/ThemeToggle';
+
+function App() {
   return (
-    <div className="bg-surface-background-primary text-surface-text-primary">
-      <h1>My Component</h1>
-      <button 
-        onClick={toggleTheme}
-        className="bg-primary-500 text-white px-4 py-2 rounded"
-      >
-        Toggle {theme === 'light' ? 'Dark' : 'Light'} Theme
-      </button>
+    <div>
+      <ThemeToggle />
     </div>
   );
 }
 ```
 
-## Data Display Components
+### Tabs
+A flexible tabs component with customizable styling and content.
 
-### Table
+```tsx
+import { Tabs } from './components/Tabs';
 
-A flexible table component with sorting, filtering, and pagination capabilities.
+const tabs = [
+  {
+    id: 'tab1',
+    label: 'First Tab',
+    content: <div>First tab content</div>
+  },
+  {
+    id: 'tab2',
+    label: 'Second Tab',
+    content: <div>Second tab content</div>
+  }
+];
 
-**Features**:
-- Sortable columns
-- Global filtering
-- Pagination
-- Custom cell rendering
-- Loading states
-- Empty states
-- Row click handling
-- Custom styling
-
-### Accordion
-
-A collapsible content component for organizing information.
-
-**Features**:
-- Single or multiple open sections
-- Customizable styling
-- Keyboard navigation
-- ARIA attributes for accessibility
-
-### Tab
-
-A tabbed interface component for switching between different views.
-
-**Features**:
-- Multiple tab variants (default, pills, underline)
-- Different sizes (small, medium, large)
-- Full-width option
-- Disabled tabs
-- Keyboard navigation
-- ARIA attributes for accessibility
-
-## Navigation Components
-
-### Navbar
-
-A responsive navigation bar with dropdown menus and mobile support.
-
-**Features**:
-- Dropdown menus
-- Mobile-friendly design
-- Multiple variants (default, transparent, solid)
-- Positioning options (static, fixed, sticky)
-- Custom branding
-- Accessibility features
-
-### Pagination
-
-A component for navigating through paginated content.
-
-**Features**:
-- Customizable page size
-- First/last page buttons
-- Previous/next buttons
-- Sibling count control
-- Disabled state
-- Different sizes
-- Accessibility support
+function App() {
+  return <Tabs tabs={tabs} />;
+}
+```
 
 ## Getting Started
 
@@ -138,59 +71,71 @@ A component for navigating through paginated content.
 ### Installation
 
 1. Clone the repository:
-   ```
-   git clone https://github.com/yourusername/design-system.git
-   cd design-system
-   ```
+```bash
+git clone https://github.com/yourusername/design-system-assignment.git
+cd design-system-assignment
+```
 
 2. Install dependencies:
-   ```
-   npm install
-   # or
-   yarn
-   ```
+```bash
+npm install
+# or
+yarn install
+```
 
 3. Start the development server:
-   ```
-   npm run dev
-   # or
-   yarn dev
-   ```
+```bash
+npm run dev
+# or
+yarn dev
+```
 
 4. Start Storybook:
-   ```
-   npm run storybook
-   # or
-   yarn storybook
-   ```
+```bash
+npm run storybook
+# or
+yarn storybook
+```
+
+### Building for Production
+
+```bash
+npm run build
+# or
+yarn build
+```
 
 ## Documentation
 
 Each component is documented in Storybook with:
-
-- Usage examples
+- Interactive examples
 - Props documentation
-- Accessibility information
-- Variants and states
-- Code snippets
+- Usage guidelines
+- Accessibility considerations
 
 ## Testing
 
-Run tests with:
-
-```
-npm test
+```bash
+npm run test
 # or
 yarn test
 ```
 
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
-- [TailwindCSS](https://tailwindcss.com/) for the utility-first CSS framework
-- [Storybook](https://storybook.js.org/) for component documentation
-- [React](https://reactjs.org/) for the UI library
-- [TypeScript](https://www.typescriptlang.org/) for type safety
+- [TailwindCSS](https://tailwindcss.com/)
+- [Storybook](https://storybook.js.org/)
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)

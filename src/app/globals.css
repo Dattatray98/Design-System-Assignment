@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import './styles/colors.css';
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -56,13 +54,6 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground transition-colors duration-400;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    @apply bg-background text-foreground;
   }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
+} 
